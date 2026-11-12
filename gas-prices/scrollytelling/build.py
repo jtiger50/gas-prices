@@ -17,3 +17,6 @@ html = pattern.sub(lambda m: '/*GEO_DATA*/' + blob + '/*END_GEO_DATA*/', html)
 src.write_text(html)
 (here / 'index.html').write_text(html)
 print('wrote index.html and src/template.html with data,', len(html) // 1024, 'KB')
+
+import subprocess, sys
+subprocess.run([sys.executable, str(here / "embed.py")], check=True)

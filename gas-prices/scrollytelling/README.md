@@ -23,7 +23,7 @@ Scroll-driven steps, seven text cards (one per sentence of the two paragraphs):
 | `data/aaa_gas_yoy.csv` | AAA regular gas prices by metro area, 2025 vs. 2026 (as supplied by the reporter; the values are also typed into `src/template.html`) |
 | `src/fetch_geo.py` | How `data/` was made from the raw downloads (see below) |
 
-Edit `src/template.html`, then run `python3 build.py`. Both files open straight from disk with the map data included.
+Edit `src/template.html`, then run `python3 build.py`. It also runs `embed.py`, which copies the graphic into the story page (`../index.html`) between the `GAS GRAPHIC START` / `GAS GRAPHIC END` comments, so leave those two comments in place; everything else in the story can be edited freely. Both files open straight from disk with the map data included.
 
 Preview tip: `index.html?t=2.75` freezes the graphic at a scroll position (step index + progress), useful for screenshots.
 
