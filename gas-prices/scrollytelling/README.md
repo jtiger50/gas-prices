@@ -2,13 +2,15 @@
 
 Self-contained page: open `index.html` in a browser (all geodata is inlined; D3 and Scrollama load from a CDN, so you need to be online).
 
+Built to sit inside a larger story: no title block and no methods/sources footer on the page (sources and math are below, for the story's credit line). On desktop a one-line source note sits under the graphic; on phones it's hidden.
+
 Scroll-driven steps, seven text cards (one per sentence of the two paragraphs):
 
 1. **Budget** — bar chart, $2.0B vs. Maryland's $1.5B projected FY2027 deficit (hover a bar for exact values).
 2. **Baltimore City** — the city outline fills with $1-bill-shaped tiles spreading out from the Inner Harbor until it's fully covered.
 3. **Purple Line** — the camera pans straight southwest from Baltimore City to the Montgomery/Prince George's corridor (no zoom-out). The line is traced Bethesda → New Carrollton with a row of bills alongside it ("$100 bills"), then a return row New Carrollton → Bethesda ("Both ways"), then a grid of 60 small copies of the route fills in, one per round trip, ending at 59.5 ("Almost 60 times").
 4. **Gas prices statewide** — the camera zooms out to all of Maryland; the Purple Line and Baltimore fade away and the state takes on a red wash. A gas-station price sign (seven-segment LED digits) counts up from the 2025 statewide average, $3.11, to the 2026 average, $3.91, as you scroll, with the percent change counting up beside it to +25.5%.
-5. **Gas prices by metro area** — a dot marks each AAA metro area on the map, with a small LED price tag right above it (or, where the map is crowded, nearby with a short leader line). Each tag counts from the area's 2025 to its 2026 price with the change beside it. Cumberland (+32.6%) is then highlighted: a yellow-edged tag and a red, ringed dot.
+5. **Gas prices by metro area** — a dot marks each AAA metro area on the map, with a small LED price tag right above it (or, where the map is crowded, nearby with a short leader line). Each tag counts from the area's 2025 to its 2026 price with the change beside it. Cumberland (+32.6%) is then highlighted: a yellow-edged tag and a red, ringed dot. Last, Baltimore and Hagerstown (+24.1%, the least affected) get white-edged tags and ringed dots while the other areas fade back.
 
 ## Files
 

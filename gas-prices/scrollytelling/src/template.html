@@ -46,36 +46,6 @@ body {
   line-height: 1.66;
 }
 
-/* ---------- title screen ---------- */
-header.intro {
-  background: var(--wash);
-  min-height: 72vh; min-height: 72svh;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center;
-  padding: 96px 16px 80px;
-}
-header.intro .inner { max-width: 860px; }
-.kicker {
-  font-family: var(--sans); font-size: 12px; font-weight: 600;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--red);
-  margin: 0 0 14px;
-}
-h1 {
-  font-family: var(--serif); font-weight: 700;
-  font-size: clamp(34px, 6.2vw, 66px); line-height: 1.03; letter-spacing: -.015em;
-  margin: 0 0 18px; text-wrap: balance;
-}
-.dek {
-  font-family: var(--serif); font-size: clamp(18px, 2.1vw, 22px); line-height: 1.45;
-  color: var(--ink-2); max-width: 660px; margin: 0 auto;
-}
-.scroll-cue {
-  margin: 34px 0 0;
-  font-family: var(--sans); font-size: 11px; font-weight: 600;
-  letter-spacing: .16em; text-transform: uppercase; color: var(--ink);
-}
-.scroll-cue span { display: block; font-size: 16px; line-height: 1; margin-top: 4px; }
-
 /* ---------- scrollytelling ---------- */
 #scrolly { position: relative; }
 #graphic {
@@ -152,6 +122,9 @@ h1 {
 #gas-tags .pct { font-size: 11.5px; }
 #gas-tags .sign.hi { border-color: #fbd603; box-shadow: 0 0 0 1px #fbd603, 0 3px 12px rgba(0,0,0,.25); }
 #gas-tags .sign.hi .nm { color: #fff; }
+/* least affected: a plain white edge, so it reads differently from Cumberland's yellow */
+#gas-tags .sign.lo { border-color: #fff; box-shadow: 0 0 0 1px #fff, 0 3px 12px rgba(0,0,0,.25); }
+#gas-tags .sign.lo .nm { color: #fff; }
 @media (max-width: 760px) {
   #sign-state .pct { font-size: 20px; }
   #gas-tags .sign { padding: 3px 5px 4px; }
@@ -208,38 +181,15 @@ h1 {
 .spacer { height: 60vh; }
 
 /* ?t= preview mode: freeze one scroll position */
-html.fixed-t header, html.fixed-t footer, html.fixed-t .spacer, html.fixed-t .step:not(.is-active) { display: none; }
+html.fixed-t .spacer, html.fixed-t .step:not(.is-active) { display: none; }
 html.fixed-t #graphic { position: fixed; inset: 0; }
 html.fixed-t * { transition: none !important; }
 html.fixed-t #steps { margin: 0; }
 html.fixed-t .step.is-active { position: fixed; inset: 0; min-height: 0; }
 html.fixed-t .step .card { position: relative; }
 
-/* ---------- methods ---------- */
-footer.notes {
-  max-width: 680px; margin: 0 auto; padding: 0 16px 80px;
-}
-footer.notes .methods {
-  margin-top: 40px; border-top: 1px solid var(--ink); padding-top: 8px;
-  font-size: 15.5px; line-height: 1.58; color: var(--ink-2);
-}
-footer.notes h2 { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--ink); margin: 16px 0 10px; }
-footer.notes ul { padding-left: 18px; margin: 0; }
-footer.notes li { margin-bottom: 8px; }
-footer.notes a {
-  color: var(--ink); text-decoration-line: underline; text-decoration-style: dashed;
-  text-decoration-color: #1979b9; text-decoration-thickness: 1.5px; text-underline-offset: .24em;
-}
-footer.notes a:hover { color: #1979b9; text-decoration-style: solid; }
-footer.notes table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
-footer.notes td { padding: 6px 0; border-bottom: 1px solid var(--hair); }
-footer.notes .gas-table td + td { text-align: right; font-family: var(--sans); font-size: 14px; padding-left: 16px; }
-footer.notes .gas-table tr:first-child td { font-family: var(--sans); font-size: 12px; font-weight: 600; color: var(--muted); }
-footer.notes td:last-child { text-align: right; font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--ink); padding-left: 16px; }
-footer.notes .note { font-style: italic; font-size: 13.5px; color: var(--muted); margin-top: 20px; }
-
 @media (max-width: 760px) {
-  .graphic-foot { display: none; }   /* sources are in the methods section below */
+  .graphic-foot { display: none; }   /* no room beside the cards on phones */
   .step { min-height: 140vh; }
   .step .card {
     top: auto;
@@ -257,15 +207,6 @@ footer.notes .note { font-style: italic; font-size: 13.5px; color: var(--muted);
 </style>
 </head>
 <body>
-
-<header class="intro">
-  <div class="inner">
-    <p class="kicker">By the numbers</p>
-    <h1>What $2 billion looks like</h1>
-    <p class="dek">A sum that size is hard to picture. So we laid it out across Maryland.</p>
-    <p class="scroll-cue">Scroll to begin<span>↓</span></p>
-  </div>
-</header>
 
 <section id="scrolly">
   <div id="graphic" aria-hidden="false">
@@ -302,42 +243,6 @@ footer.notes .note { font-style: italic; font-size: 13.5px; color: var(--muted);
   </div>
   <div class="spacer"></div>
 </section>
-
-<footer class="notes">
-  <div class="methods">
-  <h2>The math</h2>
-  <table>
-    <tr><td>The amount</td><td>$2,000,000,000</td></tr>
-    <tr><td>Maryland FY2027 projected deficit</td><td>$1,500,000,000</td></tr>
-    <tr><td>$100 bills in $2 billion</td><td>20,000,000</td></tr>
-    <tr><td>Length of a U.S. bill</td><td>6.14 in</td></tr>
-    <tr><td>20 million bills, end to end</td><td>≈ 3,119 km (1,938 mi)</td></tr>
-    <tr><td>Purple Line alignment, Bethesda–New Carrollton (MTA GIS)</td><td>≈ 26.2 km (16.3 mi)</td></tr>
-    <tr><td>Round trips covered</td><td>≈ 59.5</td></tr>
-  </table>
-  <h2>Sources</h2>
-  <ul>
-    <li>Maryland, county and Baltimore City boundaries: U.S. Census Bureau, 2023 cartographic boundary files (1:500,000), via the <a href="https://tigerweb.geo.census.gov/arcgis/rest/services/Generalized_ACS2023/State_County/MapServer">TIGERweb Generalized_ACS2023 State_County service</a>.</li>
-    <li>Purple Line route: Maryland Transit Administration, <a href="https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/Purple_Line_Alignment/FeatureServer">“Purple Line Alignment” feature service (MTA_GIS)</a>. One track of the double-track alignment is shown.</li>
-    <li>Bill dimensions: U.S. Bureau of Engraving and Printing (2.61 × 6.14 in).</li>
-  </ul>
-  <h2>Gas prices</h2>
-  <table class="gas-table">
-    <tr><td>Area (AAA)</td><td>2025</td><td>2026</td><td>Change</td></tr>
-    <tr><td>Cumberland (MD only)</td><td>$3.17</td><td>$4.20</td><td>32.6%</td></tr>
-    <tr><td>Washington (MD only)</td><td>$3.12</td><td>$3.98</td><td>27.6%</td></tr>
-    <tr><td>Frederick</td><td>$3.08</td><td>$3.91</td><td>26.9%</td></tr>
-    <tr><td>Bowie-St. Charles</td><td>$3.09</td><td>$3.91</td><td>26.4%</td></tr>
-    <tr><td><b>Statewide</b></td><td>$3.11</td><td>$3.91</td><td>25.5%</td></tr>
-    <tr><td>Salisbury</td><td>$3.12</td><td>$3.91</td><td>25.2%</td></tr>
-    <tr><td>Annapolis</td><td>$3.12</td><td>$3.88</td><td>24.3%</td></tr>
-    <tr><td>Baltimore</td><td>$3.12</td><td>$3.88</td><td>24.1%</td></tr>
-    <tr><td>Hagerstown</td><td>$3.06</td><td>$3.79</td><td>24.1%</td></tr>
-  </table>
-  <p style="margin-top:10px">Average price of a gallon of regular gas, a year apart, from AAA. On the map, each area is marked at its main city; Bowie-St. Charles is marked between the two.</p>
-  <p class="note">Money graphics are illustrative, not to scale.</p>
-  </div>
-</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/scrollama@3.2.0/build/scrollama.min.js"></script>
@@ -608,6 +513,7 @@ var GEO = /*GEO_DATA*/{"maryland":{"type":"Feature","geometry":{"type":"MultiPol
     });
   }
 
+  const LEAST = ["Baltimore", "Hagerstown"];
   const yearText = f => f <= 0 ? "2025" : f >= 1 ? "2026" : "2025 → 2026";
   function updateSigns(s) {
     if (!signs) return;
@@ -621,7 +527,10 @@ var GEO = /*GEO_DATA*/{"maryland":{"type":"Feature","geometry":{"type":"MultiPol
       t.led.set(t.d.y2025 + (t.d.y2026 - t.d.y2025) * g);
       t.pct.textContent = "+" + (t.d.pct * g).toFixed(1) + "%";
       t.pct.style.opacity = g > 0 ? 1 : 0.25;
-      t.el.classList.toggle("hi", t.d.short === "Cumberland" && s.cumberland > 0.5);
+      const cum = t.d.short === "Cumberland", lo = LEAST.includes(t.d.short);
+      t.el.classList.toggle("hi", cum && s.cumberland > 0.5);
+      t.el.classList.toggle("lo", lo && s.least > 0.5);
+      t.el.style.opacity = cum || lo ? 1 : 1 - 0.55 * s.least;
     });
   }
 
@@ -861,7 +770,7 @@ var GEO = /*GEO_DATA*/{"maryland":{"type":"Feature","geometry":{"type":"MultiPol
     const s = {
       bars: 0, map: 0, view: views.city, cover: 0, trace: 0, back: 0, laps: 0,
       corridorLabels: 0, stateLabels: 0, cityLabel: 0, gridIn: 0,
-      gas: false, prev: 1, stateWash: 0, gasStat: 0, stateCount: 0, markers: 0, tags: 0, metroCount: 0, cumberland: 0
+      gas: false, prev: 1, stateWash: 0, gasStat: 0, stateCount: 0, markers: 0, tags: 0, metroCount: 0, cumberland: 0, least: 0
     };
     if (t < 1) { s.bars = t; s.map = 0; return s; }
     // fade from bars to map at the boundary
@@ -914,7 +823,8 @@ var GEO = /*GEO_DATA*/{"maryland":{"type":"Feature","geometry":{"type":"MultiPol
     s.markers = ramp(p, 0.0, 0.1);
     s.tags = ramp(p, 0.0, 0.08);
     s.metroCount = ramp(p, 0.3, 0.55);        // hold 2025 prices, count to 2026, then hold
-    s.cumberland = ramp(p, 0.7, 0.78);
+    s.cumberland = ramp(p, 0.62, 0.7);
+    s.least = ramp(p, 0.78, 0.86);           // then Baltimore and Hagerstown, the least affected
     return s;
   }
 
@@ -1055,15 +965,24 @@ var GEO = /*GEO_DATA*/{"maryland":{"type":"Feature","geometry":{"type":"MultiPol
     ctx.lineWidth = 1; ctx.strokeStyle = colors["ink-2"];
     signs && signs.tags.forEach(t => {
       if (!t.leader) return;
+      const keep = t.d.short === "Cumberland" || LEAST.includes(t.d.short);
+      ctx.globalAlpha = s.markers * (keep ? 1 : 1 - 0.55 * s.least);
       ctx.beginPath(); ctx.moveTo(t.anchor[0], t.anchor[1]); ctx.lineTo(t.leader[0], t.leader[1]); ctx.stroke();
     });
     GAS.forEach(d => {
       const [x, y] = toScreen(d.ll);
       const hi = d.short === "Cumberland" && s.cumberland > 0;
-      ctx.globalAlpha = s.markers;
+      const lo = LEAST.includes(d.short) && s.least > 0;
+      // the in-between areas fade back along with their tags
+      ctx.globalAlpha = s.markers * (d.short === "Cumberland" || LEAST.includes(d.short) ? 1 : 1 - 0.55 * s.least);
       ctx.beginPath(); ctx.arc(x, y, hi ? r + 1.5 * s.cumberland : r, 0, Math.PI * 2);
       ctx.fillStyle = hi ? "#c71e1d" : colors["ink-2"]; ctx.fill();
       ctx.lineWidth = 1.5; ctx.strokeStyle = "#fff"; ctx.stroke();
+      if (lo) {
+        ctx.globalAlpha = s.least;
+        ctx.beginPath(); ctx.arc(x, y, r + 6, 0, Math.PI * 2);
+        ctx.lineWidth = 1.5; ctx.strokeStyle = colors.ink; ctx.stroke();
+      }
       if (hi) {
         ctx.globalAlpha = s.cumberland;
         ctx.beginPath(); ctx.arc(x, y, r + 6, 0, Math.PI * 2);
